@@ -2,21 +2,32 @@ package ifpr.pgua.eic.projetointegrador.model.entities;
 
 public class Vendedor {
     
+    private int id;
     private String nome;
     private String prontuario;
     private String email;
     private String senha;
     
-    public Vendedor(String nome, String prontuario, String email, String senha) {
+    public Vendedor(int id, String nome, String prontuario, String email, String senha) {
+        this.id = id;
         this.nome = nome;
         this.prontuario = prontuario;
         this.email = email;
         this.senha = senha;
     }
 
-    public Vendedor(String nome, String prontuario) {
+    public Vendedor(int id, String nome, String prontuario) {
+        this.id = id;
         this.nome = nome;
         this.prontuario = prontuario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -50,8 +61,5 @@ public class Vendedor {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-    
-    
-    
+      
 }
