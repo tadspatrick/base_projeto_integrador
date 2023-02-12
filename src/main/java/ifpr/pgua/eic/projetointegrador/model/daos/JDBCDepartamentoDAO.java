@@ -6,11 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import ifpr.pgua.eic.projetointegrador.model.FabricaConexoes;
 import ifpr.pgua.eic.projetointegrador.model.entities.Departamento;
+import ifpr.pgua.eic.projetointegrador.model.entities.Produto;
 import ifpr.pgua.eic.projetointegrador.model.results.Result;
 
 public class JDBCDepartamentoDAO implements DepartamentoDAO {
@@ -28,11 +30,10 @@ public class JDBCDepartamentoDAO implements DepartamentoDAO {
             Connection con = fabricaConexao.getConnection();
 
             PreparedStatement pstm = con
-                    .prepareStatement("INSERT INTO vendedores(nome, responsavel, produtos) VALUES (?,?,?)");
+                    .prepareStatement("INSERT INTO departamentos(nome, responsavel) VALUES (?,?)");
 
             pstm.setString(1, departamento.getNome());
             pstm.setString(2, departamento.getResponsavel());
-            pstm.setArray(3, departamento.getProdutos());
 
             pstm.executeUpdate();
 
@@ -60,9 +61,8 @@ public class JDBCDepartamentoDAO implements DepartamentoDAO {
                 Integer id = resultSet.getInt("id");
                 String nome = resultSet.getString("nome");
                 String responsavel = resultSet.getString("responsavel");
-                Array produtos = resultSet.getArray("produtos");
 
-                Departamento departamento = new Departamento(id, nome, responsavel, produtos);
+                Departamento departamento = new Departamento(id, nome, responsavel);
 
                 departamentos.add(departamento);
             }

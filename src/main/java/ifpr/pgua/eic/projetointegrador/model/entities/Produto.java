@@ -10,22 +10,16 @@ public class Produto {
     private Double valor;
     private LocalDateTime validade;
     private Long quantidade;
+    private Integer id_departamento;
     
-    public Produto(Integer id, String nome, String codigo, Double valor, LocalDateTime validade, Long quantidade) {
+    public Produto(Integer id, String nome, String codigo, Double valor, LocalDateTime validade, Long quantidade, Integer id_departamento) {
         this.id = id;
         this.nome = nome;
         this.codigo = codigo;
         this.valor = valor;
         this.validade = validade;
         this.quantidade = quantidade;
-    }
-
-    public Produto(String nome, String codigo, Double valor, LocalDateTime validade, Long quantidade) {
-        this.nome = nome;
-        this.codigo = codigo;
-        this.valor = valor;
-        this.validade = validade;
-        this.quantidade = quantidade;
+        this.id_departamento = id_departamento;
     }
 
     public Integer getId() {
@@ -64,6 +58,10 @@ public class Produto {
         return validade;
     }
 
+    public void setValidade(LocalDateTime validade) {
+        this.validade = validade;
+    }
+
     public void setData(LocalDateTime validade) {
         this.validade = validade;
     }
@@ -75,5 +73,13 @@ public class Produto {
     public void setQuantidade(Long quantidade) {
         this.quantidade = quantidade;
     }
+
+    public Integer getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(Integer id_departamento) {
+        this.id_departamento = id_departamento;
+    }  
     
 }

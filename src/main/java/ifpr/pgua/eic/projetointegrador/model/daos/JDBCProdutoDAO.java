@@ -29,13 +29,14 @@ public class JDBCProdutoDAO implements ProdutoDAO {
             Connection con = fabricaConexao.getConnection();
 
             PreparedStatement pstm = con
-                    .prepareStatement("INSERT INTO produtos(nome,codigo,valor,validade,quantidade) VALUES (?,?,?,?,?)");
+                    .prepareStatement("INSERT INTO produtos(nome,codigo,valor,validade,quantidade, id_departamento) VALUES (?,?,?,?,?,?)");
 
             pstm.setString(1, produto.getNome());
             pstm.setString(2, produto.getCodigo());
             pstm.setDouble(3, produto.getValor());
             pstm.setTimestamp(4, Timestamp.valueOf(produto.getValidade()));
             pstm.setLong(5, produto.getQuantidade());
+            pstm.setInt(6, produto.getId_departamento());
 
             pstm.executeUpdate();
 
@@ -64,10 +65,11 @@ public class JDBCProdutoDAO implements ProdutoDAO {
                 String nome = resultSet.getString("nome");
                 String codigo = resultSet.getString("codigo");
                 Double valor = resultSet.getDouble("valor");
-                LocalDateTime validade = resultSet.getTimestamp("data").toLocalDateTime();
+                LocalDateTime validade = resultSet.getTimestamp("validade").toLocalDateTime();
                 Long quantidade = resultSet.getLong("quantidade");
+                Integer id_departamento = resultSet.getInt("id_departamento");
 
-                Produto produto = new Produto(id, nome, codigo, valor, validade, quantidade);
+                Produto produto = new Produto(id, nome, codigo, valor, validade, quantidade, id_departamento);
 
                 produtos.add(produto);
             }
