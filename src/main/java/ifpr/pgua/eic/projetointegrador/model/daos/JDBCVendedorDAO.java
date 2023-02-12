@@ -77,4 +77,34 @@ public class JDBCVendedorDAO implements VendedorDAO {
             return Collections.emptyList();
         }
     }
+
+    public boolean fazerLogin(String email, String senha) {
+        try {
+            Connection con = fabricaConexao.getConnection();
+
+            PreparedStatement pstm = con
+                    .prepareStatement("SELECT * from vendedores WHERE email = ? and senha = ?");
+
+            ResultSet resultSet = pstm.executeQuery();
+
+            pstm.setString(1, email);
+            pstm.setString(2, senha);
+
+            if (resultSet.next()) {
+                resultSet.close();
+                pstm.close();
+                con.close();
+                return true;
+            } else {
+                resultSet.close();
+                pstm.close();
+                con.close();
+                return false;
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }
