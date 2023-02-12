@@ -1,18 +1,15 @@
 package ifpr.pgua.eic.projetointegrador.model.daos;
 
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import ifpr.pgua.eic.projetointegrador.model.FabricaConexoes;
 import ifpr.pgua.eic.projetointegrador.model.entities.Departamento;
-import ifpr.pgua.eic.projetointegrador.model.entities.Produto;
 import ifpr.pgua.eic.projetointegrador.model.results.Result;
 
 public class JDBCDepartamentoDAO implements DepartamentoDAO {
