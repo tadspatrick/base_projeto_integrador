@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import ifpr.pgua.eic.projetointegrador.controllers.TelaPrincipal;
+import ifpr.pgua.eic.projetointegrador.controllers.TelaCadastro;
 import ifpr.pgua.eic.projetointegrador.model.FabricaConexoes;
 import ifpr.pgua.eic.projetointegrador.utils.Navigator.BaseAppNavigator;
 import ifpr.pgua.eic.projetointegrador.utils.Navigator.ScreenRegistryFXML;
@@ -54,8 +55,8 @@ public class App extends BaseAppNavigator {
     @Override
     public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(getClass(), "fxml/principal.fxml", (o)->new TelaPrincipal()));
-        /*registraTela("CADASTRO", new ScreenRegistryFXML(getClass(), "fxml/cadastro.fxml", (o)->new TelaCadastro()));
-        registraTela("LOGIN", new ScreenRegistryFXML(getClass(), "fxml/login.fxml", (o)->new TelaLogin()));
+        registraTela("CADASTRO", new ScreenRegistryFXML(getClass(), "fxml/cadastro.fxml", (o)->new TelaCadastro()));
+        /*registraTela("LOGIN", new ScreenRegistryFXML(getClass(), "fxml/login.fxml", (o)->new TelaLogin()));
         registraTela("CADASTRO-PRODUTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-produto.fxml", (o)->new TelaCadastroProduto()));
         registraTela("CADASTRO-DEPARTAMENTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-departamento.fxml", (o)->new TelaCadastroDepartamento()));
         registraTela("RELATORIO", new ScreenRegistryFXML(getClass(), "fxml/relatorio.fxml", (o)->new TelaRelatorio()));*/
