@@ -23,15 +23,16 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="155.0" spacing="10.0" BorderPane.alignment="CENTER">
          <Pane prefHeight="78.0" prefWidth="135.0" />
-         <Label text="Nome:" textAlignment="CENTER" />
-         <TextField fx:id="tfNome" maxHeight="-Infinity" maxWidth="-Infinity" />
-         <Label text="Prontuário" textAlignment="CENTER" />
-         <TextField fx:id="tfProntuario" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Acesse o sistema" textAlignment="CENTER">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
          <Label text="Email:" textAlignment="CENTER" />
          <TextField fx:id="tfEmail" maxHeight="-Infinity" maxWidth="-Infinity" />
          <Label text="Senha:" textAlignment="CENTER" />
          <TextField fx:id="tfSenha" maxHeight="-Infinity" maxWidth="-Infinity" />
-         <Button onAction="#cadastrar" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastre-se" textAlignment="CENTER" />
+         <Button onAction="#logar" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Logar" textAlignment="CENTER" />
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
@@ -41,7 +42,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button onAction="#voltar" alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Voltar" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT" />
+      <Button onAction="#carregaTelaCadastro" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastre-se" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT" />
    </bottom>
 
 </BorderPane>

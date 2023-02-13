@@ -22,6 +22,15 @@ public class Vendedor {
         this.prontuario = prontuario;
     }
 
+    public Vendedor(String nome, String prontuario, String email, String senha) {
+        this.nome = nome;
+        this.prontuario = prontuario;
+        this.email = email;
+        this.senha = senha;
+    }
+
+
+
     public int getId() {
         return id;
     }

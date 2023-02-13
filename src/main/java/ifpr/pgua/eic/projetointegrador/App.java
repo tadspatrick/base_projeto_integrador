@@ -10,9 +10,13 @@ import java.io.IOException;
 
 import ifpr.pgua.eic.projetointegrador.controllers.TelaPrincipal;
 import ifpr.pgua.eic.projetointegrador.controllers.TelaCadastro;
+import ifpr.pgua.eic.projetointegrador.controllers.TelaLogin;
 import ifpr.pgua.eic.projetointegrador.model.FabricaConexoes;
+import ifpr.pgua.eic.projetointegrador.model.daos.JDBCVendedorDAO;
+import ifpr.pgua.eic.projetointegrador.model.daos.VendedorDAO;
 import ifpr.pgua.eic.projetointegrador.utils.Navigator.BaseAppNavigator;
 import ifpr.pgua.eic.projetointegrador.utils.Navigator.ScreenRegistryFXML;
+import ifpr.pgua.eic.projetointegrador.model.repositories.VendedorRepository;
 
 
 /**
@@ -21,14 +25,17 @@ import ifpr.pgua.eic.projetointegrador.utils.Navigator.ScreenRegistryFXML;
 public class App extends BaseAppNavigator {
 
 
-    //DEFINIR A FABRICA DE CONEXÕES, DAOS e REPOSITÓRIOS
+    private FabricaConexoes fabricaConexoes = FabricaConexoes.getInstance();
+    private VendedorDAO vendedorDAO;
+    private VendedorRepository vendedorRepository;
 
     @Override
     public void init() throws Exception {
         // TODO Auto-generated method stub
         super.init();
-        
-        //INSTANCIAR FABRICA, DAOS E REPOSITÓRIOS
+     
+        vendedorDAO = new JDBCVendedorDAO(fabricaConexoes);
+        vendedorRepository = new VendedorRepository(vendedorDAO);
     
     }
 
@@ -43,7 +50,7 @@ public class App extends BaseAppNavigator {
     @Override
     public String getHome() {
         // TODO Auto-generated method stub
-        return "PRINCIPAL";
+        return "LOGIN";
     }
 
     @Override
@@ -55,9 +62,9 @@ public class App extends BaseAppNavigator {
     @Override
     public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(getClass(), "fxml/principal.fxml", (o)->new TelaPrincipal()));
-        registraTela("CADASTRO", new ScreenRegistryFXML(getClass(), "fxml/cadastro.fxml", (o)->new TelaCadastro()));
-        /*registraTela("LOGIN", new ScreenRegistryFXML(getClass(), "fxml/login.fxml", (o)->new TelaLogin()));
-        registraTela("CADASTRO-PRODUTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-produto.fxml", (o)->new TelaCadastroProduto()));
+        registraTela("CADASTRO", new ScreenRegistryFXML(getClass(), "fxml/cadastro.fxml", (o)->new TelaCadastro(vendedorRepository)));
+        registraTela("LOGIN", new ScreenRegistryFXML(getClass(), "fxml/login.fxml", (o)->new TelaLogin()));
+        /*registraTela("CADASTRO-PRODUTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-produto.fxml", (o)->new TelaCadastroProduto()));
         registraTela("CADASTRO-DEPARTAMENTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-departamento.fxml", (o)->new TelaCadastroDepartamento()));
         registraTela("RELATORIO", new ScreenRegistryFXML(getClass(), "fxml/relatorio.fxml", (o)->new TelaRelatorio()));*/
         
