@@ -78,33 +78,34 @@ public class JDBCVendedorDAO implements VendedorDAO {
         }
     }
 
-    public boolean fazerLogin(String email, String senha) {
+    public Result fazerLogin(String email, String senha) {
         try {
             Connection con = fabricaConexao.getConnection();
 
             PreparedStatement pstm = con
                     .prepareStatement("SELECT * from vendedores WHERE email = ? and senha = ?");
 
-            ResultSet resultSet = pstm.executeQuery();
-
             pstm.setString(1, email);
             pstm.setString(2, senha);
+
+            ResultSet resultSet = pstm.executeQuery();
+
+            System.out.println(email + senha);
 
             if (resultSet.next()) {
                 resultSet.close();
                 pstm.close();
                 con.close();
-                return true;
+                return Result.success("Você logou no sistema");
             } else {
                 resultSet.close();
                 pstm.close();
                 con.close();
-                return false;
+                return Result.fail("Email ou senha incorreta");
             }
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return false;
+            return Result.fail(e.getMessage());
         }
     }
 }

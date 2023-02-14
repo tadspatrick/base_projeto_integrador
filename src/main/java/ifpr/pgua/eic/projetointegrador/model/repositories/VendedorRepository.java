@@ -32,4 +32,12 @@ public class VendedorRepository {
     public List<Vendedor> filtrarPorNome(String nome){
         return Collections.emptyList();
     }
+
+    public Result fazerLogin(String email, String senha){
+        if(!email.contains("@")){
+            return Result.fail("E-mail inválido!");
+        }
+        
+        return dao.fazerLogin(email, senha);
+    }
 }

@@ -16,6 +16,18 @@ import javafx.scene.control.Alert.AlertType;
 
 public class TelaLogin implements Initializable {
 
+    @FXML
+    private TextField tfEmail;
+
+    @FXML
+    private TextField tfSenha;
+
+    private VendedorRepository repositorio;
+
+    public TelaLogin(VendedorRepository repositorio){
+        this.repositorio = repositorio;
+    }
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         // TODO Auto-generated method stub
@@ -28,8 +40,20 @@ public class TelaLogin implements Initializable {
     }
 
     @FXML
-    private void logar() {
-       
+    private void logar(ActionEvent evento) {
+       String email = tfEmail.getText();
+       String senha = tfSenha.getText();
+
+       Result resultado = repositorio.fazerLogin(email,senha);
+
+       String msg = resultado.getMsg();
+
+        if(resultado instanceof SuccessResult){
+            App.pushScreen("PRINCIPAL");
+        }
+
+        Alert alert = new Alert(AlertType.INFORMATION,msg);
+        alert.showAndWait();
     }
 
 

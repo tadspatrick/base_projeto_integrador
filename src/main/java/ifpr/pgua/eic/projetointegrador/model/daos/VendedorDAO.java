@@ -8,4 +8,5 @@ import ifpr.pgua.eic.projetointegrador.model.results.Result;
 public interface VendedorDAO {
     Result inserir(Vendedor vendedor);
     List<Vendedor> buscarTodos();
+    Result fazerLogin(String email, String senha);
 }
