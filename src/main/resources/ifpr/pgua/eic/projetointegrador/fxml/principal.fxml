@@ -23,9 +23,9 @@
       <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="155.0" spacing="10.0" BorderPane.alignment="CENTER">
          <Pane prefHeight="78.0" prefWidth="135.0" />
          <Button onAction="#carregaTelaCadastroProduto" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastrar Produto" textAlignment="CENTER" />
-         <Button onAction="#carregaTelaCadastroDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastrar Departamento" textAlignment="CENTER" />
+         <Button onAction="#carregaTelaCadastroDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Cadastrar Departamento" textAlignment="CENTER" />
          <Button alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Produtos" textAlignment="CENTER" />
-         <Button onAction="#carregaTelaListaDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Departamentos" textAlignment="CENTER" />
+         <Button onAction="#carregaTelaListaDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="170.0" text="Listar Departamentos" textAlignment="CENTER" />
          <Button alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Pré-Vencidos" textAlignment="CENTER" />
          <BorderPane.margin>
             <Insets />
