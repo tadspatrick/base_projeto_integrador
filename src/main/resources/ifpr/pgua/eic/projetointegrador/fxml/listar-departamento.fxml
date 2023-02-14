@@ -40,7 +40,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Deslogar" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT" />
+      <Button onAction="#voltar" alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Deslogar" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT" />
    </bottom>
 
 </BorderPane>
