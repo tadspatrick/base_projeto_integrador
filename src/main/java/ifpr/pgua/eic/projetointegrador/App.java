@@ -12,6 +12,7 @@ import ifpr.pgua.eic.projetointegrador.controllers.TelaPrincipal;
 import ifpr.pgua.eic.projetointegrador.controllers.TelaCadastro;
 import ifpr.pgua.eic.projetointegrador.controllers.TelaCadastroDepartamento;
 import ifpr.pgua.eic.projetointegrador.controllers.TelaCadastroProduto;
+import ifpr.pgua.eic.projetointegrador.controllers.TelaListaDepartamento;
 import ifpr.pgua.eic.projetointegrador.controllers.TelaLogin;
 import ifpr.pgua.eic.projetointegrador.model.FabricaConexoes;
 import ifpr.pgua.eic.projetointegrador.model.daos.DepartamentoDAO;
@@ -68,7 +69,7 @@ public class App extends BaseAppNavigator {
     @Override
     public String getHome() {
         // TODO Auto-generated method stub
-        return "LOGIN";
+        return "LISTAR-DEPARTAMENTO";
     }
 
     @Override
@@ -84,6 +85,7 @@ public class App extends BaseAppNavigator {
         registraTela("LOGIN", new ScreenRegistryFXML(getClass(), "fxml/login.fxml", (o)->new TelaLogin(vendedorRepository)));
         registraTela("CADASTRO-DEPARTAMENTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-departamento.fxml", (o)->new TelaCadastroDepartamento(departamentoRepository)));
         registraTela("CADASTRO-PRODUTO", new ScreenRegistryFXML(getClass(), "fxml/cadastro-produto.fxml", (o)->new TelaCadastroProduto(produtoRepository)));
+        registraTela("LISTAR-DEPARTAMENTO", new ScreenRegistryFXML(getClass(), "fxml/listar-departamento.fxml", (o)->new TelaListaDepartamento(departamentoRepository)));
         
         /*registraTela("RELATORIO", new ScreenRegistryFXML(getClass(), "fxml/relatorio.fxml", (o)->new TelaRelatorio()));*/
 
