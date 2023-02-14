@@ -25,7 +25,7 @@
          <Button onAction="#carregaTelaCadastroProduto" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastrar Produto" textAlignment="CENTER" />
          <Button onAction="#carregaTelaCadastroDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastrar Departamento" textAlignment="CENTER" />
          <Button alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Produtos" textAlignment="CENTER" />
-         <Button alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Departamentos" textAlignment="CENTER" />
+         <Button onAction="#carregaTelaListaDepartamento" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Departamentos" textAlignment="CENTER" />
          <Button alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Listar Pré-Vencidos" textAlignment="CENTER" />
          <BorderPane.margin>
             <Insets />
