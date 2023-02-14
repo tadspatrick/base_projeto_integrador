@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS produtos(
     nome VARCHAR(255) NOT NULL, 
     codigo VARCHAR(255) NOT NULL,
     valor DOUBLE NOT NULL, 
-    validade DATE, 
+    validade VARCHAR(255) NOT NULL, 
     quantidade BIGINT,
     id_departamento INT,
     PRIMARY KEY (id),

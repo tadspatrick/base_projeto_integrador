@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +32,7 @@ public class JDBCProdutoDAO implements ProdutoDAO {
             pstm.setString(1, produto.getNome());
             pstm.setString(2, produto.getCodigo());
             pstm.setDouble(3, produto.getValor());
-            pstm.setTimestamp(4, Timestamp.valueOf(produto.getValidade()));
+            pstm.setString(4, produto.getValidade());
             pstm.setLong(5, produto.getQuantidade());
             pstm.setInt(6, produto.getId_departamento());
 
@@ -65,7 +63,7 @@ public class JDBCProdutoDAO implements ProdutoDAO {
                 String nome = resultSet.getString("nome");
                 String codigo = resultSet.getString("codigo");
                 Double valor = resultSet.getDouble("valor");
-                LocalDateTime validade = resultSet.getTimestamp("validade").toLocalDateTime();
+                String validade = resultSet.getString("validade");
                 Long quantidade = resultSet.getLong("quantidade");
                 Integer id_departamento = resultSet.getInt("id_departamento");
 

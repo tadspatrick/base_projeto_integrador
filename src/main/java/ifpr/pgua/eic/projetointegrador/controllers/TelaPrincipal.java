@@ -12,4 +12,19 @@ public class TelaPrincipal extends BaseController {
         App.pushScreen("CADASTRO");
     }
 
+    @FXML
+    private void carregaTelaCadastroDepartamento(ActionEvent evento) {
+        App.pushScreen("CADASTRO-DEPARTAMENTO");
+    }
+
+    @FXML
+    private void carregaTelaCadastroProduto(ActionEvent evento) {
+        App.pushScreen("CADASTRO-PRODUTO");
+    }
+
+    @FXML
+    private void deslogar(){
+        App.pushScreen("LOGIN");
+    }
+
 }

@@ -52,7 +52,7 @@ public class JDBCDepartamentoDAO implements DepartamentoDAO {
 
             ResultSet resultSet = pstm.executeQuery();
 
-            ArrayList<Departamento> departamentos = new ArrayList<>();
+            List<Departamento> departamentos = new ArrayList<>();
 
             while (resultSet.next()) {
                 Integer id = resultSet.getInt("id");

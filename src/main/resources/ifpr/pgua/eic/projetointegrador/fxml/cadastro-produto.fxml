@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.projetointegrador.controllers.TelaPrincipal">
+   <center>
+
+   </center>
+   <top>
+      <Label text="SCE - Sistema de Controle de Estoque" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="155.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="78.0" prefWidth="135.0" />
+         <Label text="Cadastro de Produto">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label text="Nome:" textAlignment="CENTER" />
+         <TextField fx:id="tfNome" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Codigo:" textAlignment="CENTER" />
+         <TextField fx:id="tfCodigo" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Valor:" textAlignment="CENTER" />
+         <TextField fx:id="tfValor" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Validade:" textAlignment="CENTER" />
+         <TextField fx:id="tfValidade" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Quantidade:" textAlignment="CENTER" />
+         <TextField fx:id="tfQuantidade" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Label text="Departamento:" textAlignment="CENTER" />
+         <TextField fx:id="tfDepartamento" maxHeight="-Infinity" maxWidth="-Infinity" />
+         <Button onAction="#cadastrar" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Cadastre-se" textAlignment="CENTER" />
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <bottom>
+      <Button onAction="#voltar" alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Voltar" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT" />
+   </bottom>
+
+</BorderPane>

@@ -90,8 +90,6 @@ public class JDBCVendedorDAO implements VendedorDAO {
 
             ResultSet resultSet = pstm.executeQuery();
 
-            System.out.println(email + senha);
-
             if (resultSet.next()) {
                 resultSet.close();
                 pstm.close();

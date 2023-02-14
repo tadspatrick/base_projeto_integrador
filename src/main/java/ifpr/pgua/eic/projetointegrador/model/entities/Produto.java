@@ -1,19 +1,28 @@
 package ifpr.pgua.eic.projetointegrador.model.entities;
 
-import java.time.LocalDateTime;
-
 public class Produto {
-    
+
     private Integer id;
     private String nome;
     private String codigo;
     private Double valor;
-    private LocalDateTime validade;
+    private String validade;
     private Long quantidade;
     private Integer id_departamento;
-    
-    public Produto(Integer id, String nome, String codigo, Double valor, LocalDateTime validade, Long quantidade, Integer id_departamento) {
+
+    public Produto(Integer id, String nome, String codigo, Double valor, String validade, Long quantidade,
+            Integer id_departamento) {
         this.id = id;
+        this.nome = nome;
+        this.codigo = codigo;
+        this.valor = valor;
+        this.validade = validade;
+        this.quantidade = quantidade;
+        this.id_departamento = id_departamento;
+    }
+
+    public Produto(String nome, String codigo, Double valor, String validade, Long quantidade,
+            Integer id_departamento) {
         this.nome = nome;
         this.codigo = codigo;
         this.valor = valor;
@@ -54,15 +63,11 @@ public class Produto {
         this.valor = valor;
     }
 
-    public LocalDateTime getValidade() {
+    public String getValidade() {
         return validade;
     }
 
-    public void setValidade(LocalDateTime validade) {
-        this.validade = validade;
-    }
-
-    public void setData(LocalDateTime validade) {
+    public void setValidade(String validade) {
         this.validade = validade;
     }
 
@@ -80,6 +85,6 @@ public class Produto {
 
     public void setId_departamento(Integer id_departamento) {
         this.id_departamento = id_departamento;
-    }  
-    
+    }
+
 }
